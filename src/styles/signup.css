@@ -1,0 +1,148 @@
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 100vh;
+}
+
+.bg-img{
+    background-image: url('/src/img/login.png');
+    background-size: cover; 
+    
+    /* width: 100%; */
+}
+
+.login-form {
+ background: rgb(255, 255, 255);
+padding: 40px 30px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+
+.form-fields {
+ display: flex;
+ flex-direction: column;
+}
+
+.flex-inputs{
+ display: flex;
+
+}
+
+label{
+ color: darkgray;
+}
+
+.inputs{
+ padding: 9px;
+ margin: 8px;
+ font-size: x-large;
+ width: 100vh;
+}
+
+i{
+ margin: 8px;
+ padding: 8px;
+}
+i{
+ margin: 8px;
+ padding: 8px;
+}
+
+.btn-flex {
+ display: flex;
+ flex-direction: row-reverse;
+ justify-content: end;
+ height: 48px;
+ width: 800px;
+ margin-top: 9px;
+}
+
+input,select  {
+color: #000;
+border-style: none;
+box-sizing: border-box;
+font-size: inherit;
+height: 32px;
+outline: none;
+width: 100%;
+background: rgb(255, 255, 255);
+border-bottom: solid 1px rgb(53 38 38 / 10%);
+}
+
+.btn{
+ text-align: center;
+ width: 117px;
+ background: #bb7cff;
+ border: none;
+ color: cornsilk;
+ border-radius: 25px;
+ font-size: 21px;
+}
+
+p{
+ display: flex;
+ flex-direction: row-reverse;
+ margin-left: 20px;
+ height: 12px;
+ color: red;
+ font-size: 15px;
+ /* font-style: italic; */
+}
+
+.pass-msg {
+ display: flex;
+ flex-direction: row-reverse;
+ margin-left: 20px;
+ height: 12px;
+ color: red;
+ font-size: 15px;
+ /* font-style: italic; */
+}
+
+.one {
+ color: darkgray;
+ font-size: 32px;
+}
+
+.two{
+color: black;
+font-size: 36px;
+}
+
+h4 {
+ color: darkgray;
+ margin: 24px;
+ font-size: 21px;
+}
+
+.tag {
+ margin: 18px;
+}
+.fa-star:before {
+ content: "\f005";
+ color: aliceblue;
+}
+
+.fa-envelope:before {
+ content: "\f0e0";
+ color: darkgray;
+}
+
+.fa-check-circle:before {
+ content: "\f058";
+ color: darkgray;
+}
+
+.fa-birthday-cake:before {
+ content: "\f1fd";
+ color: darkgray;
+}
+
+.fa-user:before {
+ content: "\f007";
+ color: darkgrey;
+}
