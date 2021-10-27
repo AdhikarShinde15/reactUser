@@ -1,0 +1,64 @@
+.card {
+    border: thin solid red;
+    margin: 0 auto;
+    padding: 0px 1rem;
+    max-width: 41vw;
+    height: 96vh;
+}
+
+.img {
+    background: url('../img/person.png') no-repeat center;
+    height: 17rem;
+    padding: .8rem;
+    border-bottom: 3px solid orange;
+}
+
+.info {
+    height: 19.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.options {
+    display: flex;
+    justify-content: space-around;
+    background: lightgreen;
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.name {
+    margin-top: 1.5rem;
+    margin-bottom: .2rem;
+    padding: 0rem;
+    font-size: 1.5rem;
+}
+
+.data {
+    color: grey;
+    width: 57%;
+    height: 65%;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.btn-d {
+    color: azure;
+}
+
+.icolor {
+    color: grey;
+}
