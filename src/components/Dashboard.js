@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import '../styles/dashboard.css';
-import db from "../firebase/firebase";
+import db, { auth } from "../firebase/firebase";
 import EditModal from './EditModal';
 import DeleteModal from './deleteModal';
+import { useHistory } from 'react-router';
 
 const Dashboard = (props) => {
+  const history = useHistory();
   const uid = (props.match.params.uid);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -23,12 +25,13 @@ const Dashboard = (props) => {
             ...child.val()
           });
         });
-        if(info[0]){
-        setId(info[0].id);
-        setName(info[0].name);
-        setPhone(info[0].phone);
-        setPosition(info[0].position);
-        setDob(info[0].dob);}
+        if (info[0]) {
+          setId(info[0].id);
+          setName(info[0].name);
+          setPhone(info[0].phone);
+          setPosition(info[0].position);
+          setDob(info[0].dob);
+        }
       }));
   })
   return (
@@ -43,7 +46,10 @@ const Dashboard = (props) => {
             <div className="info-item"><i className="icolor fas fa-user fa-2x"></i><p className="data">{position}</p></div>
           </div>
           <div className="options">
-            <i className="btn-d far fa-heart fa-2x"></i>
+            <i onClick={() => {
+              auth.signOut();
+              history.push("/")
+            }} className="btn-d far fa-heart fa-2x"></i>
             <EditModal
               open={editModal}
               setEditModal={setEditModal}
@@ -58,10 +64,11 @@ const Dashboard = (props) => {
               uid={uid}
               infoId={infoId}
             />
-            <i onClick={() => setEditModal(true)} className="btn-d fas fa-user-edit fa-2x"></i>
+            <i onClick={() => { setEditModal(true); console.log("edit") }} className="btn-d fas fa-user-edit fa-2x"></i>
             <DeleteModal
               open={deleteModal}
               setDeleteModal={setDeleteModal}
+              name={name}
               uid={uid}
               infoId={infoId}
             />

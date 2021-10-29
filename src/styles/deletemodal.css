@@ -1,0 +1,20 @@
+.modaldelete {
+    background:#fdfdfd;
+    max-width: 30rem;
+    outline: none;
+    padding:1.2rem;
+    text-align: center;
+    width: 18rem;
+    height: 7rem;
+    border: 1px solid black;
+}
+
+.del-flex {
+   display: flex; 
+   flex-direction: column;
+}
+
+.del-p{
+    margin-bottom: 1rem;
+    color: black;
+}

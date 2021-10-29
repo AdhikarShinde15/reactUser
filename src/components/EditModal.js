@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import { useEffect, useState } from 'react';
 import db from "../firebase/firebase";
+import '../styles/editmodal.css';
 
 const EditModal = (props) => {
     const [name, setName] = useState(props.name);
@@ -34,19 +35,23 @@ const EditModal = (props) => {
             onRequestClose={() => props.setEditModal(false)}
             closeTimeoutMS={200}
             contentLabel="Edit User"
-            appElement={document.getElementById('root')} >
-            <h1>Edit User {name}</h1>
+            appElement={document.getElementById('root')}
+            className="modal"
+            >
+            <h1 className="editname">Edit User {name}</h1>
             <form onSubmit={saveChanges}>
-            <label><span>*</span>Name:</label>
-            <input value={name} onChange={(e) => setName(e.target.value)}/>
-            <label><span>*</span>DOB:</label>
-            <input value={dob} onChange={(e) =>  setDob(e.target.value)}/>
-            <label><span>*</span>Phone:</label>
-            <input value={phone} onChange={(e) => setPhone(e.target.value)}/>
-            <label><span>*</span>Position:</label>
-            <input value={position} onChange={(e) => setPosition(e.target.value)}/>
-            <button onClick={() => props.setEditModal(false)}>close</button>
-            <button>Save</button>
+            <label className="label"><span className="aster">* </span> &nbsp; Name:</label>
+            <input className="editlabel" value={name} onChange={(e) => setName(e.target.value)}/>
+            <label className="label"><span className="aster">* </span> &nbsp;DOB:</label>
+            <input className="editlabel" value={dob} onChange={(e) =>  setDob(e.target.value)}/>
+            <label className="label"><span className="aster">* </span> &nbsp;Phone:</label>
+            <input className="editlabel" value={phone} onChange={(e) => setPhone(e.target.value)}/>
+            <label className="label"><span className="aster">* </span>&nbsp;Position:</label>
+            <input className="editlabel" value={position} onChange={(e) => setPosition(e.target.value)}/>
+             <div className="edit-btns">
+             <button className="edt-btn" onClick={() => props.setEditModal(false)}>Close</button>
+             <button className="edt-btn bg">Save</button>
+             </div>
             </form>
         </Modal>
     )
