@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/dashboard.css';
 import db from "../firebase/firebase";
 import EditModal from './EditModal';
+import DeleteModal from './deleteModal';
 
 const Dashboard = (props) => {
   const uid = (props.match.params.uid);
@@ -9,7 +10,9 @@ const Dashboard = (props) => {
   const [phone, setPhone] = useState('');
   const [position, setPosition] = useState('');
   const [dob, setDob] = useState('');
-  const [editModal, setEditModal] = useState(false)
+  const [editModal, setEditModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [infoId, setId] = useState('');
   useEffect(() => {
     db.ref(`users/${uid}/info`)
       .on('value', ((snapshot) => {
@@ -20,12 +23,14 @@ const Dashboard = (props) => {
             ...child.val()
           });
         });
+        if(info[0]){
+        setId(info[0].id);
         setName(info[0].name);
         setPhone(info[0].phone);
         setPosition(info[0].position);
-        setDob(info[0].dob);
+        setDob(info[0].dob);}
       }));
-  }, [])
+  })
   return (
     <>
       <div className="card">
@@ -39,9 +44,28 @@ const Dashboard = (props) => {
           </div>
           <div className="options">
             <i className="btn-d far fa-heart fa-2x"></i>
-            <EditModal open={editModal}/>
-            <i onClick={() => setEditModal(true) } className="btn-d fas fa-user-edit fa-2x"></i>
-            <i className="btn-d fas fa-trash-alt fa-2x"></i>
+            <EditModal
+              open={editModal}
+              setEditModal={setEditModal}
+              name={name}
+              setName={setName}
+              phone={phone}
+              setPhone={setPhone}
+              dob={dob}
+              setDob={setDob}
+              position={position}
+              setPosition={setPosition}
+              uid={uid}
+              infoId={infoId}
+            />
+            <i onClick={() => setEditModal(true)} className="btn-d fas fa-user-edit fa-2x"></i>
+            <DeleteModal
+              open={deleteModal}
+              setDeleteModal={setDeleteModal}
+              uid={uid}
+              infoId={infoId}
+            />
+            <i onClick={() => setDeleteModal(true)} className="btn-d fas fa-trash-alt fa-2x"></i>
           </div>
         </div>
       </div>

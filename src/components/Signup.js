@@ -41,6 +41,7 @@ const Signup = () => {
             dob: dob,
             position: position
         }
+        
         auth.createUserWithEmailAndPassword(
             email,
             password
@@ -64,7 +65,7 @@ const Signup = () => {
                     <h4>Welcome back!Log in to your <br /> account to view todays <br /> clients: </h4>
                 </section>
                 <section className="form-fill">
-                    <form autocomplete="off" id="newuser" action="" className="form-fields">
+                    <form autoComplete="off" id="newuser" action="" className="form-fields">
                         <div className="flex-inputs">
                             <i className="fas fa-user-ninja fa-3x"></i>
                             <span className="inputs">

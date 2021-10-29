@@ -13,8 +13,9 @@ const Login = () => {
             emailRef.current.value,
             passwordRef.current.value
         ).then(user => {
-            console.log(user.uid)
-            history.push(`./dashboard/${user.uid}`)
+           if(user){
+            history.push(`./dashboard/${user.uid}`);
+           }
         }).catch(error => {
             console.log(error.message)
         })
