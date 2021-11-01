@@ -102,6 +102,7 @@ const Signup = () => {
                             <span className="inputs">
                                 <label htmlFor="Email">Position: </label><br />
                                 <select value={position} onChange={(e) => setPosition(e.target.value)} placeholder="Select">
+                                    <option>Select</option>
                                     <option value="adminstrator">Adminstrator</option>
                                     <option value="user">User</option>
                                     <option value="employee">Employee</option>
