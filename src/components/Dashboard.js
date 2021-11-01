@@ -64,7 +64,7 @@ const Dashboard = (props) => {
               uid={uid}
               infoId={infoId}
             />
-            <i onClick={() => { setEditModal(true); console.log("edit") }} className="btn-d fas fa-user-edit fa-2x"></i>
+            <i onClick={() => { setEditModal(true) }} className="btn-d fas fa-user-edit fa-2x"></i>
             <DeleteModal
               open={deleteModal}
               setDeleteModal={setDeleteModal}

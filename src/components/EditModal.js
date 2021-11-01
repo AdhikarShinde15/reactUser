@@ -17,7 +17,8 @@ const EditModal = (props) => {
         setDob(props.dob);
     }, [props.name,props.phone,props.position,props.dob])
    
-    const saveChanges = () => {
+    const saveChanges = (e) => {
+        e.preventDefault();
        const updates = {
             name,
             phone,
@@ -26,7 +27,8 @@ const EditModal = (props) => {
        }
        
        db.ref(`users/${props.uid}/info/${props.infoId}`).update(updates).then(() => {
-        history.push(`./dashboard/${props.uid}`);
+        history.push(`/dashboard/${props.uid}`);
+        props.setEditModal(false)
        }).catch((e) => console.log("erroe", e));
     }
 
