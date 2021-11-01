@@ -25,7 +25,7 @@ const EditModal = (props) => {
        }
        
        db.ref(`users/${props.uid}/info/${props.infoId}`).update(updates).then(() => {
-           console.log('updated');
+        history.push('/');
        }).catch((e) => console.log("erroe", e));
     }
 
