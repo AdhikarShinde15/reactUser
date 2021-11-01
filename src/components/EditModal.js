@@ -1,5 +1,6 @@
 import Modal from 'react-modal';
 import { useEffect, useState } from 'react';
+import { useHistory } from "react-router";
 import db from "../firebase/firebase";
 import '../styles/editmodal.css';
 
@@ -8,7 +9,7 @@ const EditModal = (props) => {
     const [phone, setPhone] = useState(props.phone);
     const [position, setPosition] = useState(props.position);
     const [dob, setDob] = useState(props.dob);
-
+    const history = useHistory();
     useEffect(() => {
         setName(props.name);
         setPhone(props.phone);
