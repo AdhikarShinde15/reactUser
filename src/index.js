@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { auth } from './firebase/firebase';
 import App from './components/App';
+import { useHistory } from "react-router";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -9,6 +11,15 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+auth.onAuthStateChanged((user) => {
+  const history = useHistory();
+  if(user){
+    if(history.location.pathname === '/')
+    history.push(`/dashboard/${user.uid}`);
+  }
+})
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
