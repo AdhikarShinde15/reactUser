@@ -17,7 +17,7 @@ const Login = () => {
             history.push(`./dashboard/${user.uid}`);
            }
         }).catch(error => {
-            console.log(error.message)
+            alert(error.message)
         })
     }
 
