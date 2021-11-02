@@ -43,13 +43,13 @@ const EditModal = (props) => {
             >
             <h1 className="editname">Edit User {name}</h1>
             <form onSubmit={saveChanges}>
-            <label className="label"><span className="aster">* </span> &nbsp; Name:</label>
+            <label className="label">Name<span className="aster">*</span></label>
             <input className="editlabel" value={name} onChange={(e) => setName(e.target.value)}/>
-            <label className="label"><span className="aster">* </span> &nbsp;DOB:</label>
+            <label className="label">DOB<span className="aster">* </span></label>
             <input className="editlabel" value={dob} onChange={(e) =>  setDob(e.target.value)}/>
-            <label className="label"><span className="aster">* </span> &nbsp;Phone:</label>
+            <label className="label">Phone<span className="aster">* </span></label>
             <input className="editlabel" value={phone} onChange={(e) => setPhone(e.target.value)}/>
-            <label className="label"><span className="aster">* </span>&nbsp;Position:</label>
+            <label className="label">Position<span className="aster">* </span></label>
             <input className="editlabel" value={position} onChange={(e) => setPosition(e.target.value)}/>
              <div className="edit-btns">
              <button className="edt-btn" onClick={() => props.setEditModal(false)}>Close</button>

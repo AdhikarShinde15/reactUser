@@ -57,8 +57,30 @@
 
 .btn-d {
     color: azure;
+    cursor: pointer;
 }
 
 .icolor {
     color: grey;
+}
+
+.like {
+    content: "\f004";
+    color: red;
+}
+
+.logout-flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.logout{
+    margin-top: 1.1rem;
+    padding: 0.4rem;
+    outline: none;
+    border: none;
+    background: #b990f5;
+    cursor: pointer;
+    border-radius: 0.5rem;
 }

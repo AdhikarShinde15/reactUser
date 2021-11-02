@@ -15,6 +15,7 @@ const Dashboard = (props) => {
   const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [infoId, setId] = useState('');
+  const [like, setLike] = useState('');
   useEffect(() => {
     db.ref(`users/${uid}/info`)
       .on('value', ((snapshot) => {
@@ -33,23 +34,30 @@ const Dashboard = (props) => {
           setDob(info[0].dob);
         }
       }));
-  })
+  });
+  const likeSwitch = () => {
+    if(like)
+    setLike('')
+    else
+    setLike("like")
+
+  }
   return (
     <>
       <div className="card">
         <div className="img"></div>
         <div className="info">
-          <h3 className="name">{name}</h3>
+          <div className="logout-flex"><h3 className="name">{name}</h3> <button onClick={() =>  {
+              auth.signOut();
+              history.push("/")
+            }} className="logout">Logout</button></div>
           <div className="details">
             <div className="info-item"><i className="icolor fas fa-birthday-cake fa-2x"></i><p className="data">{dob}</p></div>
             <div className="info-item"><i className="icolor fas fa-phone fa-2x"></i> <p className="data">{phone}</p></div>
             <div className="info-item"><i className="icolor fas fa-user fa-2x"></i><p className="data">{position}</p></div>
           </div>
           <div className="options">
-            <i onClick={() => {
-              auth.signOut();
-              history.push("/")
-            }} className="btn-d far fa-heart fa-2x"></i>
+            <i onClick={likeSwitch} className={` ${like} btn-d far fa-heart fa-2x`}></i>
             <EditModal
               open={editModal}
               setEditModal={setEditModal}

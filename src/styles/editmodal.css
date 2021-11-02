@@ -22,7 +22,7 @@
     padding:1.2rem;
     text-align: center;
     width: 30rem;
-    height: 20rem;
+    height: 23rem;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-top: .5px solid black;
@@ -33,6 +33,7 @@
     display: flex;
     color: black;
     font-size: 1.1rem;
+    padding: 0.3rem;
 }
 
 .aster {
@@ -42,15 +43,14 @@
 .editlabel {
     margin-bottom: 0.5rem;
     width: 29rem;
-    border: 1px soild grey;
     border: 0.1rem solid grey;
+    padding: 0.3rem;
     font-size: inherit;
-    height: 32 px;
     height: 2rem;
 }
 
 .editname {
-    font-family: sans-serif;
+    font-family: -webkit-pictograph;
     font-size: 1.4rem;
     color: black;
     display: flex;
@@ -64,11 +64,13 @@
     border: thin;
     margin: 0.3rem;
     width: 5rem;
+    cursor: pointer;
 }
 
 .edit-btns {
     display: flex;
     justify-content: right;
+    cursor: pointer ;
 }
 
 .bg {
